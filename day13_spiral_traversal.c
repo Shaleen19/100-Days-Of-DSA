@@ -6,7 +6,6 @@ int main() {
 
     int matrix[r][c];
 
-    // Input matrix
     for(int i = 0; i < r; i++) {
         for(int j = 0; j < c; j++) {
             scanf("%d", &matrix[i][j]);
@@ -20,19 +19,16 @@ int main() {
 
     while(top <= bottom && left <= right) {
 
-        // 1️⃣ Traverse Top Row
         for(int i = left; i <= right; i++) {
             printf("%d ", matrix[top][i]);
         }
         top++;
 
-        // 2️⃣ Traverse Right Column
         for(int i = top; i <= bottom; i++) {
             printf("%d ", matrix[i][right]);
         }
         right--;
 
-        // 3️⃣ Traverse Bottom Row (if exists)
         if(top <= bottom) {
             for(int i = right; i >= left; i--) {
                 printf("%d ", matrix[bottom][i]);
@@ -40,7 +36,6 @@ int main() {
             bottom--;
         }
 
-        // 4️⃣ Traverse Left Column (if exists)
         if(left <= right) {
             for(int i = bottom; i >= top; i--) {
                 printf("%d ", matrix[i][left]);
