@@ -12,7 +12,6 @@ int main() {
 
     scanf("%d", &n);
 
-    // Create Linked List
     for(int i = 0; i < n; i++) {
         scanf("%d", &value);
         newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -29,7 +28,6 @@ int main() {
 
     scanf("%d", &key);
 
-    // Count occurrences
     temp = head;
     while(temp != NULL) {
         if(temp->data == key)
