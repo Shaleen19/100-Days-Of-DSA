@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Function to check if the tree is a Min-Heap
+int isMinHeap(int arr[], int n) {
+    // Check Min-Heap property
+    for (int i = 0; i <= (n - 2) / 2; i++) {
+        // Check left child
+        if (arr[i] > arr[2 * i + 1])
+            return 0;
+
+        // Check right child (if exists)
+        if (2 * i + 2 < n && arr[i] > arr[2 * i + 2])
+            return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    if (isMinHeap(arr, n))
+        printf("YES\n");
+    else
+        printf("NO\n");
+
+    return 0;
+}
